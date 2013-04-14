@@ -37,3 +37,9 @@ MJax.GoogleMapPanel.MapObject.prototype.AddMarker = function(objData){
     this.Markers[objData.strControlId] = new google.maps.Marker(objData);
     return this.Markers[objData.strControlId];
 }
+MJax.GoogleMapPanel.MapObject.prototype.RemoveMarker = function(objMarker){
+    if(typeof objMarker != 'undefined'){
+        objMarker.setMap(null);
+        delete objMarker;
+    }
+}

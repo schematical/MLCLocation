@@ -1,7 +1,12 @@
 <?php
 class MJaxGoogleMapEvent extends MJaxEventBase{
 	public function Render(){
-        $strRendered = sprintf("google.maps.event.addListener(%s, '%s', %s);", $this->objControl->GetObjectPath(), $this->strEventName, $this->objAction->Render());
+        $strRendered = sprintf(
+            "google.maps.event.addListener(%s, '%s', %s);",
+            $this->objControl->GetObjectPath(),
+            $this->strEventName,
+            $this->objAction->Render()
+        );
         $this->blnRendered = true;
         return $strRendered;
     }

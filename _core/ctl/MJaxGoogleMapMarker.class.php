@@ -60,16 +60,12 @@ class MJaxGoogleMapMarker extends MJaxControl{
 	public function Remove(){
 		$this->objForm->AddJSCall(
 			sprintf(
-				'%s.setMap(null);',
+				'%s.RemoveMarker(%s);',
+                $this->objParentControl->GetObjectPath(),
 				$this->GetObjectPath()
 			)
 		);
-		$this->objForm->AddJSCall(
-			sprintf(
-				'delete %s;',
-				$this->GetObjectPath()
-			)
-		);
+
 		parent::Remove();
 	}
 	 public function __get($strName) {
