@@ -52,11 +52,14 @@ class MLCLocation extends MLCLocationBase {
 		if(json_last_error() != JSON_ERROR_NONE){
 			return false;
 		}
-		
+		if(count($arrData['results']) == 0){
+            //throw new Exception("No geo data found - Query: " . $strQuery);
+        }
 		$arrAddress = $arrData['results'][0];
 		
 		$this->Lat = $arrAddress['geometry']['location']['lat'];
 		$this->Lng = $arrAddress['geometry']['location']['lng'];
+
         return true;
 
     }
