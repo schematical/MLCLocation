@@ -24,8 +24,9 @@ class MLCLocationEditPanel extends MLCLocationEditPanelBase {
         $this->objMLCLocation->zip = $this->txtZip->Text;
         $this->objMLCLocation->country = $this->txtCountry->Text;
         $this->objMLCLocation->idAccount = MLCAuthDriver::IdAccount();
+        $this->objMLCLocation->GetLatLng();
         $this->objMLCLocation->Save();
-        $this->objLocation->GetLatLng();
+
     }
 
 }
