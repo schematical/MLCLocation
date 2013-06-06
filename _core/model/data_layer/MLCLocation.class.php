@@ -53,7 +53,7 @@ class MLCLocation extends MLCLocationBase {
 			return false;
 		}
 		if(count($arrData['results']) == 0){
-            //throw new Exception("No geo data found - Query: " . $strQuery);
+            return false;//throw new Exception("No geo data found - Query: " . $strQuery);
         }
 		$arrAddress = $arrData['results'][0];
 		

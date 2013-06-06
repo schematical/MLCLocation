@@ -42,3 +42,31 @@
         </div>
     </div>
 </form>
+<hr>
+<form class='form-horizontal'>
+    <div class='row'>
+        <div class='span6'>
+            <div class="control-group">
+                <label class="control-label" class="control-label" for="c3">Lat</label>
+                <div class='controls'>
+                    <?php $_CONTROL->txtLat->Render(); ?>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" class="control-label" for="c3"></label>
+                <div class='controls'>
+                    <?php $_CONTROL->btnLLSave->Render(); ?>
+                </div>
+            </div>
+        </div>
+        <div class='span6'>
+            <div class="control-group">
+                <label class="control-label" class="control-label" for="c3">Lng</label>
+                <div class='controls'>
+                    <?php $_CONTROL->txtLng->Render(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

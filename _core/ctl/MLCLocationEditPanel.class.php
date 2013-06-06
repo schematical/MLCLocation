@@ -7,9 +7,13 @@
 */
 require_once (__MLC_LOCATION_CORE_CTL__ . "/base_classes/MLCLocationEditPanelBase.class.php");
 class MLCLocationEditPanel extends MLCLocationEditPanelBase {
+    public $btnLLSave = null;
     public function __construct($objParentControl, $objMLCLocation = null) {
         parent::__construct($objParentControl, $objMLCLocation);
         $this->strTemplate = __MLC_LOCATION_CORE_VIEW__ . '/MLCLocationEditPanel.tpl.php';
+        $this->btnLLSave = new MJaxButton($this);
+        $this->btnLLSave->Text = 'Save Lat/Lng';
+        $this->btnLLSave->AddAction($this, 'btnLLSave_click');
     }
     public function btnSave_click(){
         if (is_null($this->objMLCLocation)) {
@@ -28,6 +32,12 @@ class MLCLocationEditPanel extends MLCLocationEditPanelBase {
         $this->objMLCLocation->Save();
         return $this->objMLCLocation;
 
+    }
+    public function btnLLSave_click(){
+        $this->objMLCLocation->Lng = $this->txtLng->Text;
+        $this->objMLCLocation->Lat = $this->txtLat->Text;
+        $this->objMLCLocation->Save();
+        return $this->objMLCLocation;
     }
 
 }

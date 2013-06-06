@@ -1,8 +1,6 @@
 <?php
 define('__MLC_LOCATION__', dirname(__FILE__));
-if(!defined('__MLC_DB_MANAGER__')){
-	MLCApplication::InitPackage('MLCDBManager');
-}
+
 define('__MLC_LOCATION_CORE__', __MLC_LOCATION__ . '/_core');
 define('__MLC_LOCATION_CORE_CTL__', __MLC_LOCATION_CORE__ . '/ctl');
 define('__MLC_LOCATION_CORE_MODEL__', __MLC_LOCATION_CORE__ . '/model');
